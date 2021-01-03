@@ -1,4 +1,5 @@
 import os
+import time
 
 from config import RECIEVER_PIN, TRANSMITTER_PIN, DEFAULT_LENGTH
 from lib.reciever import Reciever
@@ -21,7 +22,7 @@ def menu():
     [Q] QUIT
         ''')
 
-        answer = input("> ")
+        action = input("> ")
 
         if action == "1":
             reciever = Reciever(RECIEVER_PIN)

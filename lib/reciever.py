@@ -9,9 +9,6 @@ class Reciever:
         self.device.enable_rx()
         print(f"Initialize reciever on pin {self.pin}")
 
-    def set_session_file(self, filename: str):
-        pass
-
     def start(self):
         print("Enter Ctrl-C to stop")
         try:
@@ -24,9 +21,9 @@ class Reciever:
         
         while True:
             if self.device.rx_code_timestamp != timestamp:
-                timestamp = device.rx_code_timestamp
-                print(f"[CODE]: {device.rx_code} [LENGHT]: {device.rx_pulselength} [PROTOCOL]: {device.rx_proto}")
+                timestamp = self.device.rx_code_timestamp
+                print(f"[CODE]: {device.rx_code} [LENGHT]: {self.device.rx_pulselength} [PROTOCOL]: {self.device.rx_proto}")
 
     def __del__(self):
-        device.cleanup()
+        self.device.cleanup()
 
