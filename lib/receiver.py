@@ -24,8 +24,6 @@ class Receiver:
         while True:
             if self.device.rx_code_timestamp != timestamp:
                 timestamp = self.device.rx_code_timestamp
-                print(f"[CODE]: {self.device.rx_code}\
-                        [LENGTH]: {self.device.rx_pulselength} \
-                        [PROTOCOL]: {self.device.rx_proto}")
+                print(f"[CODE]: {self.device.rx_code} [LENGTH]: {self.device.rx_pulselength} [PROTOCOL]: {self.device.rx_proto}")
 
             time.sleep(0.01)

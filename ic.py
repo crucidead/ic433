@@ -6,21 +6,27 @@ from lib.receiver import Receiver
 from lib.transmitter import Transmitter
 
 
+def print_menu():
+    print('''\033[36
+        ,--.        ,---.,----. ,----.  
+        `--' ,---. /    |'.-.  |'.-.  | 
+        ,--.| .--'/  '  |  .' <   .' <  
+        |  |\ `--.'--|  |/'-'  |/'-'  | 
+        `--' `---'   `--'`----' `----'  
+        \033[30\033[43do not harm\033[0m
+        \033[32:: version: 0.1 ::
+        
+        \033[36- 1 - \033[0mRECIEVE
+        \033[36- 2 - \033[0mSEND
+        \033[36- Q - \033[0mQUIT
+            ''')
+
+
 def menu():
     action = ""
     while action.lower() != "q":
         os.system("clear")
-        print('''
-    ,--.        ,---.,----. ,----.  
-    `--' ,---. /    |'.-.  |'.-.  | 
-    ,--.| .--'/  '  |  .' <   .' <  
-    |  |\ `--.'--|  |/'-'  |/'-'  | 
-    `--' `---'   `--'`----' `----'  
-
-    [1] RECIEVE
-    [2] SEND
-    [Q] QUIT
-        ''')
+        print_menu()
 
         action = input("> ")
 
@@ -41,7 +47,6 @@ def menu():
         elif action.lower() != "q":
             print("Wrong action")
             time.sleep(1)
-
 
 
 if __name__ == "__main__":
