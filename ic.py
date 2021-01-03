@@ -1,24 +1,26 @@
 import os
 import time
 
+from colorama import Fore, Back
+
 from config import RECEIVER_PIN, TRANSMITTER_PIN, DEFAULT_LENGTH
 from lib.receiver import Receiver
 from lib.transmitter import Transmitter
 
 
 def print_menu():
-    print('''\033[36
+    print(f'''{Fore.CYAN} 
         ,--.        ,---.,----. ,----.  
         `--' ,---. /    |'.-.  |'.-.  | 
         ,--.| .--'/  '  |  .' <   .' <  
         |  |\ `--.'--|  |/'-'  |/'-'  | 
         `--' `---'   `--'`----' `----'  
-        \033[30\033[43do not harm\033[0m
-        \033[32:: version: 0.1 ::
+        {Back.YELLOW}do not harm{Fore.RESET}
+        {Fore.GREEN}:: version: 0.1 ::
         
-        \033[36- 1 - \033[0mRECIEVE
-        \033[36- 2 - \033[0mSEND
-        \033[36- Q - \033[0mQUIT
+        {Fore.CYAN} - 1 - {Fore.RESET}RECEIVE
+        {Fore.CYAN} - 2 - {Fore.RESET}SEND
+        {Fore.CYAN} - Q - {Fore.RESET}QUIT
             ''')
 
 
@@ -45,7 +47,7 @@ def menu():
             sender = Transmitter(TRANSMITTER_PIN, code, plength, proto, DEFAULT_LENGTH, repeat)
             sender.start()
         elif action.lower() != "q":
-            print("Wrong action")
+            print(Fore.RED + "Wrong action")
             time.sleep(1)
 
 
