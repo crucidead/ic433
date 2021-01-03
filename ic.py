@@ -1,7 +1,8 @@
 import os
 
 from config import RECIEVER_PIN, TRANSMITTER_PIN, DEFAULT_LENGTH
-from lib.reciever import Reciever, Transmitter
+from lib.reciever import Reciever
+from lib.transmitter import Transmitter
 
 
 def menu():

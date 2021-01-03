@@ -19,11 +19,11 @@ class Transmitter:
         self.device.tx_repeat = repeat
         print(f"Initialize transmitter on pin {self.pin}")
 
-    def __del__(self):
-        device.cleanup()
-
     def start():
         try:
             self.device.tx_code(self.code, self.protocol, self.plength, self.length)
         except KeyboardInterrupt:
             print("Stopping...")
+
+    def __del__(self):
+        device.cleanup()
