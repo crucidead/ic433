@@ -15,7 +15,7 @@ def print_menu():
         ,--.| .--'/  '  |  .' <   .' <  
         |  |\ `--.'--|  |/'-'  |/'-'  | 
         `--' `---'   `--'`----' `----'  
-        {Back.YELLOW}do not harm{Fore.RESET}
+        {Back.YELLOW}{Fore.RESET}do not harm{Back.RESET}
         {Fore.GREEN}:: version: 0.1 ::
         
         {Fore.CYAN} - 1 - {Fore.RESET}RECEIVE
