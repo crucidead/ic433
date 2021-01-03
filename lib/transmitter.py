@@ -2,7 +2,7 @@ from rpi_rf import RFDevice
 
 
 class Transmitter:
-     def __init__(self, pin: int, 
+    def __init__(self, pin: int, 
                 code: int, 
                 plength: int,
                 protocol: int,
